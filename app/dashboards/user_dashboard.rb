@@ -24,7 +24,7 @@ class UserDashboard < Administrate::BaseDashboard
     admin: Field::Boolean,
     name: Field::Text,
     phone: Field::Text,
-   # tag_id: Field::Number,
+
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -58,7 +58,7 @@ class UserDashboard < Administrate::BaseDashboard
     :admin,
     :name,
     :phone,
-    #:tag_id: Field::Number,
+
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -78,7 +78,6 @@ class UserDashboard < Administrate::BaseDashboard
     :admin,
     :name,
     :phone,
-    #tag_id: Field::Number,
   ].freeze
 
   # Overwrite this method to customize how users are displayed
