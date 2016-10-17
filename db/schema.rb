@@ -11,7 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017140218) do
+ActiveRecord::Schema.define(version: 20161017152750) do
+
+  create_table "detections", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "sensor_id"
+    t.datetime "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lendings", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.datetime "from"
+    t.datetime "to"
+  end
+
+  create_table "rfid_tags", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sensors", force: :cascade do |t|
+    t.integer  "sensor_id"
+    t.datetime "date"
+    t.text     "coordinate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -27,6 +58,8 @@ ActiveRecord::Schema.define(version: 20161017140218) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.boolean  "admin"
+    t.text     "phone"
+    t.text     "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

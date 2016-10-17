@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sensor_id: 
+  date: 2016-10-17 18:25:45
+  coordinate: MyText
+
+two:
+  sensor_id: 
+  date: 2016-10-17 18:25:45
+  coordinate: MyText
