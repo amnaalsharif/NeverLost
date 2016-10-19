@@ -1,5 +1,8 @@
 module Admin
   class UsersController < Admin::ApplicationController
+    def index
+        @users = User.all
+    end
     # To customize the behavior of this controller,
     # simply overwrite any of the RESTful actions. For example:
     #
@@ -15,8 +18,6 @@ module Admin
 
     # See https://administrate-docs.herokuapp.com/customizing_controller_actions
     # for more information
-    def index
-        @rfidtags = User.RfidTag.all
-    end
+
   end
 end
