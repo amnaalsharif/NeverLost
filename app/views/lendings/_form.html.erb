@@ -1,0 +1,35 @@
+<%= form_for(@lending) do |f| %>
+  <% if @lending.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lending.errors.count, "error") %> prohibited this lending from being saved:</h2>
+
+      <ul>
+      <% @lending.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tag_id %><br>
+    <%= f.select :tag_id, options_from_collection_for_select(RfidTag.all, :tag_id, :tag_id) %>
+  </div>
+
+ <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.select :user_id, options_from_collection_for_select(User.all, :user_id, :user_id) %>
+  </div>
+  <div class="field">
+    <%= f.label :from %><br>
+    <%= f.datetime_select :from %>
+  </div>
+  <div class="field">
+    <%= f.label :to %><br>
+    <%= f.datetime_select :to %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

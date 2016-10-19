@@ -1,0 +1,1 @@
+json.partial! "rfid_tags/rfid_tag", rfid_tag: @rfid_tag

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   root to: 'visitor#index'
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :user
+  resources :rfid_tags
+  resources :lendings
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
     # devise_scope :user do
