@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :user
   resources :rfid_tags
   resources :lendings
+  resources :detections
+  resources :sensors
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
     # devise_scope :user do

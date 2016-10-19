@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tag:</strong>
+  <%= @detection.tag_id %>
+</p>
+
+<p>
+  <strong>Sensor:</strong>
+  <%= @detection.sensor_id %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @detection.time %>
+</p>
+
+<%= link_to 'Edit', edit_detection_path(@detection) %> |
+<%= link_to 'Back', detections_path %>

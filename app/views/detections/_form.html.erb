@@ -1,0 +1,32 @@
+<%= form_for(@detection) do |f| %>
+  <% if @detection.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@detection.errors.count, "error") %> prohibited this detection from being saved:</h2>
+
+      <ul>
+      <% @detection.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="field">
+    <%= f.label :tag_id %><br>
+    <%= f.select :tag_id, options_from_collection_for_select(RfidTag.all, :tag_id, :tag_id) %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :sensor_id %><br>
+    <%= f.select :sensor_id, options_from_collection_for_select(Sensor.all, :sensor_id, :sensor_id) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.datetime_select :time %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
