@@ -1,6 +1,14 @@
 class LendingsController < ApplicationController
   before_action :set_lending, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_admin
+  before_action :authenticate_user!
+
+
+    def authenticate_admin
+      redirect_to '/', alert: 'Not authorized.' unless current_user && current_user.admin?
+    end
+
   # GET /lendings
   # GET /lendings.json
   def index

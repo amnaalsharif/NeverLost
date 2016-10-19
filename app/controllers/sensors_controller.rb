@@ -1,5 +1,12 @@
 class SensorsController < ApplicationController
   before_action :set_sensor, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_admin
+  before_action :authenticate_user!
+
+
+    def authenticate_admin
+      redirect_to '/', alert: 'Not authorized.' unless current_user && current_user.admin?
+    end
 
   # GET /sensors
   # GET /sensors.json
